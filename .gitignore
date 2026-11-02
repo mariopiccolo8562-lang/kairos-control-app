@@ -1,0 +1,4 @@
+*.jks
+*.conf
+build/
+.gradle/

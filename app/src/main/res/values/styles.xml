@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="KairosTheme" parent="@android:style/Theme.Material.NoActionBar">
+        <item name="android:windowBackground">@color/kairos_bg</item>
+        <item name="android:statusBarColor">@color/kairos_bg</item>
+        <item name="android:navigationBarColor">@color/kairos_bg</item>
+    </style>
+    <color name="kairos_bg">#0B0F1A</color>
+    <color name="kairos_accent">#00E5FF</color>
+</resources>

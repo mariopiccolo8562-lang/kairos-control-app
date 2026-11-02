@@ -1,0 +1,38 @@
+plugins {
+    id 'com.android.application'
+}
+
+android {
+    namespace 'com.kairos.control'
+    compileSdk 34
+
+    defaultConfig {
+        applicationId "com.kairos.control"
+        minSdk 26
+        targetSdk 34
+        // Il numero di versione sale da solo a ogni compilazione su GitHub
+        versionCode((System.getenv("GITHUB_RUN_NUMBER") ?: "1").toInteger())
+        versionName "1.0." + (System.getenv("GITHUB_RUN_NUMBER") ?: "1")
+    }
+
+    signingConfigs {
+        release {
+            storeFile file("kairos-control.jks")
+            storePassword System.getenv("KEYSTORE_PASSWORD")
+            keyAlias "kairos"
+            keyPassword System.getenv("KEYSTORE_PASSWORD")
+        }
+    }
+
+    buildTypes {
+        release {
+            signingConfig signingConfigs.release
+            minifyEnabled false
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+}
